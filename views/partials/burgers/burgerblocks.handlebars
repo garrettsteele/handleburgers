@@ -1,0 +1,9 @@
+<li class="burgerblock">
+  {{burgerName}}
+  <button class="changeStatus btn btn-primary" data-id="{{this.id}}" data-neweats="{{devoured}}">
+    {{#if devoured}}IT WAS DELICIOUS!{{else}}NEVER TRIED THAT{{/if}}
+  </button>
+
+  <button class="deleteButton btn btn-danger" onClick="window.location.reload();"
+    data-burgerID="{{this.id}}">DELETE</button>
+</li>

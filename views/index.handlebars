@@ -1,0 +1,47 @@
+<div id="header">
+  <h1>Welcome to HandleBurgers</h1>
+  <h2>No hassle, convenient burger logging!</h2>
+</div>
+
+<div id="flex">
+  <div id="uneaten">
+    <h2>To Be Eaten:</h2>
+
+    <ul>
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burgers/burgerblocks devoured=true}}
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+
+  <div id="eaten">
+    <h2>Eaten and Enjoyed:</h2>
+
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
+      {{> burgers/burgerblocks devoured=false}}
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+
+</div>
+
+<form id="addForm">
+  <h2>Add a Burger!</h2>
+  <div class="form-group">
+    <label for="burger">Burger Name:</label>
+    <input type="text" id="burger" name="burgerName">
+  </div>
+
+  <div class="form-group">
+    <label for="eaten">Have you tried this burger?</label><br>
+    <input type="radio" name="eaten" value="1">Yep!<br>
+    <input type="radio" name="eaten" value="0"> Not yet
+  </div>
+
+  <button class="btn btn-success" type="submit">Add A Burger</button>
+</form>
